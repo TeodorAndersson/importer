@@ -1,56 +1,53 @@
 import * as React from 'react'
 
-let _Components = {}
-
 class _ComponentLoader {
+    Components = {}
     connectedWrappers = [];
-    inject(newComponents) {
-        let c = { ..._Components }
+    inject(newComponents, override) {
+        let c = { ...this.Components }
 
         Object.keys(newComponents).map(name => {
             console.log('inject compnent', name)
-            if (!c[name]) {
+            if (!c[name] || override) {
                 console.log('injecting ', name)
                 c[name] = newComponents[name];
             }
         });
-        _Components = c;
+        this.Components = c;
         this.connectedWrappers.forEach(cb => cb());
     }
     subscribe(cb) {
         this.connectedWrappers = [...this.connectedWrappers, cb]
     }
 
-    async use(componentNames) {
-        return Promise.all(componentNames.map(name => {
-            // see if the name is a explicit or default component
-            return new Promise((resolve, reject) => {
-                const comp = _Components[name];
-                if (!comp)
-                    reject("Component not found!");
-                resolve(comp)
-            })
-        }));
+    get() {
 
+        return this.Components;
     }
 
     connect(WrappedComponent) {
+
         return class extends React.Component {
             constructor(props) {
                 super(props);
                 this.state = {
-                    components: 0
+                    componentreloads: 0,
+                    Components: () => { }
+
                 }
             }
             componentWillMount() {
                 ComponentLoader.subscribe(() => {
                     this.setState(() => {
-                        return { components: this.state.components + 1 }
+                        return {
+                            componentreloads: this.state.componentreloads + 1,
+                            Components: ComponentLoader.get()
+                        }
                     });
                 })
             }
             render() {
-                return <WrappedComponent {...this.props} Components={_Components} />
+                return <WrappedComponent {...this.props} {...this.state} />
             }
         }
     }

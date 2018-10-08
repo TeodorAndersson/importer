@@ -3,22 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import { Core } from './eos'
 
-Core.ComponentLoader.use([
-  'Button',
-  'Avatar',
-  'Icon'
-]);
-
 class _App extends Component {
+  lazyload() {
+    console.log('lazyload');
+    Core.PackageLoader.use('dhl');
+  }
   render() {
-    console.log(this.props);
-    //look at all this boilerplate?!
 
-    const Button = this.props.Components.Button;
-    const Avatar = this.props.Components.Avatar;
-    const Icon = this.props.Components.Icon;
+    const { Button, Avatar, Icon } = this.props.Components;
+
     if (!Button || !Avatar || !Icon) return null;
-
 
     return (
 
@@ -28,6 +22,7 @@ class _App extends Component {
           <Button />
           <Avatar />
           <Icon />
+          <button onClick={() => this.lazyload()} >Lazy load</button>
         </header>
       </div>
     );

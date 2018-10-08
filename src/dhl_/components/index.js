@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Avatar = (props) => {
-    return <div>DHLAvatar...</div>
+    return <div>DHL sAvatar...</div>
 }

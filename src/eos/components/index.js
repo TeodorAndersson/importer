@@ -7,5 +7,5 @@ export const Avatar = (props) => {
     return <div>Eos Avatar...</div>
 }
 export const Icon = (props) => {
-    return <div>Eos The icon</div>
+    return <div>Eos Tsshe icon</div>
 }
