@@ -23,7 +23,7 @@ class _PackageLoader {
                 return;
             console.log('loading', name, 'rest', rest);
 
-            import(`../../packages/${name}`).then(module => {
+            import(`packages/${name}`).then(module => {
                 console.log('package loaded, loading components', name, module)
                 const Components = module.Components;
                 if (Components)

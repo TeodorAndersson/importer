@@ -22,7 +22,7 @@ class _App extends Component {
           <Button />
           <Avatar />
           <Icon />
-          <button onClick={() => this.lazyload()} >Lazy load</button>
+          <button onClick={() => this.lazyload()} >Lazy load DHL package</button>
         </header>
       </div>
     );
