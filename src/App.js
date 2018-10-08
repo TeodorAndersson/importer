@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Core } from './eos'
 
-class App extends Component {
+Core.ComponentLoader.use([
+  'Button',
+  'Avatar',
+  'Icon'
+]);
+
+class _App extends Component {
   render() {
+    console.log(this.props);
+
+    const Button = this.props.Components.Button;
+    const Avatar = this.props.Components.Avatar;
+    const Icon = this.props.Components.Icon;
+    if (!Button || !Avatar || !Icon) return null;
+
+
     return (
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Button />
+          <Avatar />
+          <Icon />
         </header>
       </div>
     );
   }
 }
 
-export default App;
+const ConnectedApp = Core.ComponentLoader.connect(_App);
+
+export default ConnectedApp;
