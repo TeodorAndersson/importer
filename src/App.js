@@ -12,6 +12,7 @@ Core.ComponentLoader.use([
 class _App extends Component {
   render() {
     console.log(this.props);
+    //look at all this boilerplate?!
 
     const Button = this.props.Components.Button;
     const Avatar = this.props.Components.Avatar;
