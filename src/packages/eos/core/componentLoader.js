@@ -12,6 +12,8 @@ class _ComponentLoader {
                 if (!c[name] || override) {
                     c[name] = newComponents[name];
                     console.log(`${name} component was successfully injected`)
+                }else{
+                    console.log(`${name} component was already injected`)
                 }
             });
             this.Components = c;
