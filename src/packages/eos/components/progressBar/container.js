@@ -1,4 +1,4 @@
-import {decrementRequested, incrementRequested} from "../../core/modules/actions"
+import {decrementRequested, incrementRequested, resetRequested} from "../../core/modules/actions"
 import {connect} from "react-redux";
 import Bar from "./bar";
 import {Core} from "Packages/eos/core";
@@ -15,6 +15,9 @@ const mapDispatchToProps = dispatch => {
         },
         decrement: () => {
             dispatch(decrementRequested())
+        },
+        reset: () => {
+            dispatch(resetRequested())
         }
     }
 };

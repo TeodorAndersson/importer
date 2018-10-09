@@ -41,6 +41,7 @@ export function* watchReset() {
 export default function* rootSaga() {
     yield all([
         watchIncrement(),
-        watchDecrement()
+        watchDecrement(),
+        watchReset()
     ])
 }
