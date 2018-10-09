@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ProgressBarContainer from './container'
 import _Buttons from './buttons'
 import _Bar from './bar'
+import {Core} from "Packages/eos/core";
 
 const ErrorContainer = () => (
     <p>Error</p>
@@ -12,7 +13,7 @@ export {_Buttons as Buttons}
 export {_Bar as Bar}
 
 
-export default class ProgressBarFeature extends Component {
+class ProgressBarFeature extends Component {
 
     state = {
         error: '',
@@ -36,4 +37,4 @@ export default class ProgressBarFeature extends Component {
     }
 }
 
-
+export default Core.ComponentLoader.connect(ProgressBarFeature)

@@ -1,5 +1,6 @@
 import {Button} from "semantic-ui-react";
 import React from "react";
+import {Core} from "Packages/eos/core";
 
 const Buttons = ({theme, increment, decrement}) => (
     <div>
@@ -9,5 +10,5 @@ const Buttons = ({theme, increment, decrement}) => (
     </div>
 )
 
-export default Buttons
+export default Core.ComponentLoader.connect(Buttons)
 

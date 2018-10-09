@@ -35,8 +35,7 @@ class _ComponentLoader {
         return class extends React.Component {
             state = {
                 componentReloads: 0,
-                Components: () => {
-                }
+                Components: ComponentLoader.get()
             }
 
             componentWillMount() {

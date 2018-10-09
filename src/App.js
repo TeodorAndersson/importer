@@ -13,9 +13,9 @@ class _App extends Component {
 
     render() {
 
-        const {Button, Avatar, Icon, ProgressBarFeature} = this.props.Components;
+        const {ProgressBarFeature} = this.props.Components;
 
-        if (!Button || !Avatar || !Icon) return null;
+        if (!ProgressBarFeature) return null;
 
         return (
             <div className="App">

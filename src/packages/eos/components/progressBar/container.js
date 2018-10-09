@@ -1,6 +1,7 @@
 import {decrementRequested, incrementRequested} from "../../core/modules/actions"
 import {connect} from "react-redux";
 import Bar from "./bar";
+import {Core} from "Packages/eos/core";
 
 const mapStateToProps = (state) => ({
     percent: state.percent,
@@ -23,4 +24,4 @@ const ProgressBarContainer = connect(
     mapDispatchToProps
 )(Bar);
 
-export default ProgressBarContainer
+export default Core.ComponentLoader.connect(ProgressBarContainer)
