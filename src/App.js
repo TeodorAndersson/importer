@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Core } from './eos'
+import { Core } from './packages/eos'
 
 class _App extends Component {
-  lazyload() {
-    console.log('lazyload');
+
+  lazyLoad() {
+    console.log('lazyLoad');
     Core.PackageLoader.use('dhl');
   }
+
   render() {
 
     const { Button, Avatar, Icon } = this.props.Components;
@@ -22,7 +24,7 @@ class _App extends Component {
           <Button />
           <Avatar />
           <Icon />
-          <button onClick={() => this.lazyload()} >Lazy load DHL package</button>
+          <button onClick={() => this.lazyLoad()} >Lazy load DHL package</button>
         </header>
       </div>
     );
