@@ -1,4 +1,5 @@
 import { Core } from './core'
 import * as Components from './components'
-import {store} from './core/modules/store'
-export { Components, Core, store }
+import * as Reducers from './core/modules/reducers'
+import * as Sagas from './core/modules/sagas'
+export { Components, Core, Reducers, Sagas }

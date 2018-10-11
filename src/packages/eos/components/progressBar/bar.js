@@ -1,23 +1,22 @@
-import {Progress} from "semantic-ui-react";
+import { Progress } from "semantic-ui-react";
 import React from "react";
-import ProgressButtons from "./buttons";
-import {Core} from "Packages/eos/core";
+import { Core } from "Packages/eos";
 
-const Bar = ({percent, increment, decrement, reset, ...props}) => {
+const Bar = ({ percent, increment, decrement, reset, ...props }) => {
     console.log(props);
 
     const { ProgressButtons } = props.Components;
 
-    if(!ProgressButtons){
+    if (!ProgressButtons) {
         return <p>Loading</p>
     }
 
     return (
         <div>
-            <Progress percent={percent} indicating/>
-            <ProgressButtons increment={increment} decrement={decrement} reset={reset}/>
+            <Progress percent={percent} indicating />
+            <ProgressButtons increment={increment} decrement={decrement} reset={reset} />
         </div>)
 };
 
-export default Core.ComponentLoader.connect(Bar)
+export default Core.connect(Bar)
 

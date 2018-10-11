@@ -1,11 +1,11 @@
-import {decrementRequested, incrementRequested, resetRequested} from "../../core/modules/actions"
-import {connect} from "react-redux";
+import { decrementRequested, incrementRequested, resetRequested } from "../../core/modules/actions"
+import { connect } from "react-redux";
 import Bar from "./bar";
-import {Core} from "Packages/eos/core";
+import { Core } from "Packages/eos";
 
 const mapStateToProps = (state) => ({
-    percent: state.percent,
-    error: state.error
+    percent: state.progressBar && state.progressBar.percent,
+    error: state.progressBar && state.progressBar.error
 });
 
 const mapDispatchToProps = dispatch => {
@@ -27,4 +27,4 @@ const ProgressBarContainer = connect(
     mapDispatchToProps
 )(Bar);
 
-export default Core.ComponentLoader.connect(ProgressBarContainer)
+export default Core.connect(ProgressBarContainer)
