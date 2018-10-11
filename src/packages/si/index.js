@@ -1,2 +1,3 @@
 import * as Components from './components'
-export { Components }
+import * as Styles from './styles'
+export { Components, Styles }

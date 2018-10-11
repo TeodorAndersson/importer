@@ -18,6 +18,6 @@ const Bar = ({percent, increment, decrement, reset, ...props}) => {
             <ProgressButtons increment={increment} decrement={decrement} reset={reset}/>
         </div>)
 };
-
+ 
 export default Core.ComponentLoader.connect(Bar)
 

@@ -1,5 +1,5 @@
 const AppConfig = {
-    packages: ['si', 'eos']
+    packages: ['si', 'dhl', 'eos'].reverse()
 }
 
 export { AppConfig }

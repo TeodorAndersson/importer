@@ -14,6 +14,7 @@ class _ComponentLoader {
                     console.log(`${name} component was successfully injected`)
                 }else{
                     console.log(`${name} component was already injected`)
+                    reject()
                 }
             });
             this.Components = c;
