@@ -1,5 +1,5 @@
 const AppConfig = {
-    packages: ['si', 'eos']
+    packages: ['eos', 'si', 'dhl']
 }
 
 export { AppConfig }

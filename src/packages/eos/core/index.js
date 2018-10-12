@@ -5,9 +5,6 @@ import { PackageLoader } from './packageLoader'
 import { Store, Provider } from './store'
 import { AppConfig } from 'AppConfig'
 
-PackageLoader.use(AppConfig.packages, false).then(() => {
-    console.log('All packages loaded')
-});
 
 const connect = (WrappedComponent) => {
 
