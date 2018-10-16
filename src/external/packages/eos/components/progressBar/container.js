@@ -1,7 +1,7 @@
-import { decrementRequested, incrementRequested, resetRequested } from "../../core/modules/actions"
+import { decrementRequested, incrementRequested, resetRequested } from "../../../../core/modules/actions"
 import { connect } from "react-redux";
 import Bar from "./bar";
-import { Core } from "Packages/eos";
+import  Core  from "core";
 
 const mapStateToProps = (state) => ({
     percent: state.progressBar && state.progressBar.percent,

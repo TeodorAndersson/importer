@@ -4,10 +4,10 @@ class _PackageLoader {
     packages = [];
     async load(name, override) {
         if (this.packages.indexOf(name) !== -1) return;
-        await import(`Packages/${name}`).then(async module => {
+        await import(`${name}`).then(async module => {
             this.packages = [...this.packages, name]
             console.log(`Package ${name} loaded, now loading components`)
-            import(`Packages/${name}/styles`)
+            import(`packages/${name}/styles`)
             await this.injectComponents(module, name, override);
             await this.injectReducers(module, name, override);
             await this.injectSagas(module, name, override);

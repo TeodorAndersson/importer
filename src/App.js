@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Core } from './packages/eos'
+import  Core from 'core'
 import 'semantic-ui-css/semantic.min.css';
 
 class _App extends Component {

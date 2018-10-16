@@ -1,6 +1,6 @@
 import { Progress } from "semantic-ui-react";
 import React from "react";
-import { Core } from "Packages/eos";
+import  Core  from "core";
 
 const Bar = ({ percent, increment, decrement, reset, ...props }) => {
     console.log(props);

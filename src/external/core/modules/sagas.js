@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import API from 'Packages/client'
+import API from 'core/client'
 import { increment, decrement, reachedMax, reachedMin, reset } from './actions'
 
 function* incrementRequest() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProgressBarContainer from './container'
 import _Buttons from './buttons'
 import _Bar from './bar'
-import { Core } from "Packages/eos/core";
+import  Core  from "core";
 
 const ErrorContainer = () => (
     <p>Error</p>

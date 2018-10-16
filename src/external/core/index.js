@@ -3,8 +3,6 @@ import React from 'react'
 import { ComponentLoader } from './componentLoader'
 import { PackageLoader } from './packageLoader'
 import { Store, Provider } from './store'
-import { AppConfig } from 'AppConfig'
-
 
 const connect = (WrappedComponent) => {
 
@@ -31,6 +29,9 @@ const connect = (WrappedComponent) => {
         }
     }
 }
-export const Core = { ComponentLoader, PackageLoader, Store, Provider, connect }
+
+const Core = { ComponentLoader, PackageLoader, Store, Provider, connect }
+
+export default Core
 
 
