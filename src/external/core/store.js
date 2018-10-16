@@ -1,17 +1,19 @@
 import React from 'react'
-import { applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
+import { all } from 'redux-saga/effects'
+import createSagaMiddleware from 'redux-saga'
 import { Provider as ReduxProvider } from 'react-redux'
 import { createInjectSagasStore, sagaMiddleware, injectSaga } from 'redux-sagas-injector'
 import { injectReducer } from 'redux-reducers-injector'
 
 
+
 class _Store {
     store
-
     constructor() {
         const composeEnhancers =
             typeof window === 'object' &&
-            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+                window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
                 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
                     // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
                 }) : compose;
@@ -22,16 +24,8 @@ class _Store {
         );
 
         this.store = createInjectSagasStore(
-            {
-                rootSaga: function* () {
-                    yield 0
-                }
-            },
-            {
-                init: () => {
-                    return {}
-                }
-            },
+            { rootSaga: function* () { return 0 } },
+            { init: () => { return {} } },
             {},
             enhancer
         )
@@ -58,13 +52,13 @@ class _Store {
 }
 
 class Provider extends React.Component {
-
-    state = {
-        store: Store.get()
-    };
+    constructor(props) {
+        super(props)
+        this.state = { store: Store.get() }
+    }
 
     render() {
-        return <ReduxProvider store={this.state.store}>
+        return <ReduxProvider store={Store.get()} >
             {this.props.children}
         </ReduxProvider>
     }
@@ -72,7 +66,7 @@ class Provider extends React.Component {
 
 const Store = new _Store();
 
-export {Store, Provider}
+export { Store, Provider }
 
 
 

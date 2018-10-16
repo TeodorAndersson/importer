@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
-import {PackageLoader} from "./external/core/packageLoader";
+import {PackageLoader} from "core/packageLoader";
 import AppConfig from "appConfig";
 
 PackageLoader.use(AppConfig.packages).then(() => {
