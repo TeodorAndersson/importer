@@ -1,8 +1,8 @@
 import React from 'react'
-import {applyMiddleware, compose} from 'redux'
-import {Provider as ReduxProvider} from 'react-redux'
-import {createInjectSagasStore, sagaMiddleware, injectSaga} from 'redux-sagas-injector'
-import {injectReducer} from 'redux-reducers-injector'
+import { applyMiddleware, compose } from 'redux'
+import { Provider as ReduxProvider } from 'react-redux'
+import { createInjectSagasStore, sagaMiddleware, injectSaga } from 'redux-sagas-injector'
+import { injectReducer } from 'redux-reducers-injector'
 
 
 class _Store {

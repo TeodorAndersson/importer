@@ -66,6 +66,8 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     return loaders;
 };
 
+console.log(path.resolve(__dirname, '../src/external/packages/eos/index.js'))
+
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -143,9 +145,9 @@ module.exports = {
             'react-native': 'react-native-web',
             'core': path.resolve(__dirname, '../src/external/core/'),
             'packages': path.resolve(__dirname, '../src/external/packages/'),
-            'eos': path.resolve(__dirname, '../src/external/packages/eos/'),
-            'dhl': path.resolve(__dirname, '../src/external/packages/dhl/'),
-            'si': path.resolve(__dirname, '../src/external/packages/si/'),
+            'eos': path.resolve(__dirname, '../src/external/packages/eos'),
+            'dhl': path.resolve(__dirname, '../src/external/packages/dhl'),
+            'si': path.resolve(__dirname, '../src/external/packages/si'),
             'appConfig': path.resolve(__dirname, '../src/App.config.js')
         },
         plugins: [

@@ -4,7 +4,7 @@ class _PackageLoader {
     packages = [];
     async load(name, override) {
         if (this.packages.indexOf(name) !== -1) return;
-        await import(`${name}`).then(async module => {
+        await import(`packages/${name}`).then(async module => {
             this.packages = [...this.packages, name]
             console.log(`Package ${name} loaded, now loading components`)
             import(`packages/${name}/styles`)

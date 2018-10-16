@@ -6,11 +6,6 @@ import 'semantic-ui-css/semantic.min.css';
 
 class _App extends Component {
 
-    lazyLoad() {
-        console.log('lazyLoad');
-        Core.PackageLoader.use('dhl');
-    }
-
     render() {
 
         const { ProgressBarFeature } = this.props.Components;

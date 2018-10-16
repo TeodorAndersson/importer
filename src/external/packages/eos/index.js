@@ -1,2 +1,3 @@
 import * as Components from './components'
-export default Components
+import {progressBar as Reducers} from './modules/reducers'
+export {Components, Reducers}
